@@ -82,7 +82,7 @@
           //
 
           camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-          camera.position.set( 0, 200, 800 );
+          camera.position.set( 400, 200, -800 );
 
           controls = new THREE.OrbitControls(camera);
           controls.addEventListener('change', render);
@@ -135,8 +135,8 @@
           for ( var i = 0, l = 15; i < l; i ++ ) {
             var sphere = new THREE.Mesh( geometry, materials[ 2 ] );
             sphere.position.x = parseFloat(locations[i][timestep][5])
-            sphere.position.y = parseFloat(locations[i][timestep][6])
-            sphere.position.z = parseFloat(locations[i][timestep][7])
+            sphere.position.z = parseFloat(locations[i][timestep][6])
+            sphere.position.y = parseFloat(locations[i][timestep][7])
             objects.push( sphere );
             scene.add( sphere );
           }
@@ -214,8 +214,8 @@
         for (var i = 0; i < 15; i++) {
           face = objects[i]
           face.position.x = parseFloat(locations[i][timestep][5])
-          face.position.y = parseFloat(locations[i][timestep][6])
-          face.position.z = parseFloat(locations[i][timestep][7])
+          face.position.z = parseFloat(locations[i][timestep][6])
+          face.position.y = parseFloat(locations[i][timestep][7])
         }
 				render();
 				stats.update();
