@@ -82,7 +82,7 @@
           //
 
           camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-          camera.position.set( 400, 200, -800 );
+          camera.position.set( 200, 100, -400 );
 
           controls = new THREE.OrbitControls(camera);
           controls.addEventListener('change', render);
@@ -139,6 +139,9 @@
             sphere.position.y = parseFloat(locations[i][timestep][7])
             objects.push( sphere );
             scene.add( sphere );
+            controls.target.x = sphere.position.x;
+            controls.target.y = sphere.position.y;
+            controls.target.z = sphere.position.z;
           }
 
           var PI2 = Math.PI * 2;
@@ -148,9 +151,6 @@
             context.fill();
           }
 
-          particleLight = new THREE.Sprite( new THREE.SpriteCanvasMaterial( { color: 0xffffff, program: program } ) );
-          particleLight.scale.x = particleLight.scale.y = 8;
-          scene.add( particleLight );
 
           // Lights
 
