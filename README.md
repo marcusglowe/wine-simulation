@@ -1,5 +1,4 @@
 # Wine Simualation
-===============
 
 A deliverable for my project for MIT's 6.163: Strobe Lab.
 
